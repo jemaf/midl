@@ -1,4 +1,4 @@
-
+  
 public class TextBox extends Component {
 
 	public TextBox() {
