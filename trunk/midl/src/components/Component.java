@@ -17,13 +17,13 @@ public abstract class Component {
 	protected DIMENSION_TYPE layoutWidth;
 	protected DIMENSION_TYPE layoutHeight;
 	protected GRAVITY_TYPE layoutGravity;
-	protected float layoutWeight;
+	protected String layoutWeight;
 	
 	//atributos de margem para outros componentes
-	protected float marginRight;
-	protected float marginLeft;
-	protected float marginTop;
-	protected float marginBottom;
+	protected String marginRight;
+	protected String marginLeft;
+	protected String marginTop;
+	protected String marginBottom;
 	
 	
 	public Component() {
@@ -34,7 +34,7 @@ public abstract class Component {
 	}
 	
 	public abstract void setSubComponent(Component c);
-	public abstract Component getSubComponent(Component c);
+	public abstract Component getSubComponent(int pos);
 
 	/**
 	 * @return the id
@@ -121,103 +121,73 @@ public abstract class Component {
 	}
 
 	/**
-	 * @return the marginRight
-	 */
-	public float getMarginRight() {
-		return marginRight;
-	}
-
-	/**
-	 * @param marginRight the marginRight to set
-	 */
-	public void setMarginRight(int marginRight) {
-		this.marginRight = marginRight;
-	}
-
-	/**
-	 * @return the marginLeft
-	 */
-	public float getMarginLeft() {
-		return marginLeft;
-	}
-
-	/**
-	 * @param marginLeft the marginLeft to set
-	 */
-	public void setMarginLeft(int marginLeft) {
-		this.marginLeft = marginLeft;
-	}
-
-	/**
-	 * @return the marginTop
-	 */
-	public float getMarginTop() {
-		return marginTop;
-	}
-
-	/**
-	 * @param marginTop the marginTop to set
-	 */
-	public void setMarginTop(int marginTop) {
-		this.marginTop = marginTop;
-	}
-
-	/**
-	 * @return the marginBottom
-	 */
-	public float getMarginBottom() {
-		return marginBottom;
-	}
-
-	/**
-	 * @param marginBottom the marginBottom to set
-	 */
-	public void setMarginBottom(int marginBottom) {
-		this.marginBottom = marginBottom;
-	}
-
-	/**
 	 * @return the layoutWeight
 	 */
-	public float getLayoutWeight() {
+	public String getLayoutWeight() {
 		return layoutWeight;
 	}
 
 	/**
 	 * @param layoutWeight the layoutWeight to set
 	 */
-	public void setLayoutWeight(float layoutWeight) {
+	public void setLayoutWeight(String layoutWeight) {
 		this.layoutWeight = layoutWeight;
+	}
+
+	/**
+	 * @return the marginRight
+	 */
+	public String getMarginRight() {
+		return marginRight;
 	}
 
 	/**
 	 * @param marginRight the marginRight to set
 	 */
-	public void setMarginRight(float marginRight) {
+	public void setMarginRight(String marginRight) {
 		this.marginRight = marginRight;
+	}
+
+	/**
+	 * @return the marginLeft
+	 */
+	public String getMarginLeft() {
+		return marginLeft;
 	}
 
 	/**
 	 * @param marginLeft the marginLeft to set
 	 */
-	public void setMarginLeft(float marginLeft) {
+	public void setMarginLeft(String marginLeft) {
 		this.marginLeft = marginLeft;
+	}
+
+	/**
+	 * @return the marginTop
+	 */
+	public String getMarginTop() {
+		return marginTop;
 	}
 
 	/**
 	 * @param marginTop the marginTop to set
 	 */
-	public void setMarginTop(float marginTop) {
+	public void setMarginTop(String marginTop) {
 		this.marginTop = marginTop;
+	}
+
+	/**
+	 * @return the marginBottom
+	 */
+	public String getMarginBottom() {
+		return marginBottom;
 	}
 
 	/**
 	 * @param marginBottom the marginBottom to set
 	 */
-	public void setMarginBottom(float marginBottom) {
+	public void setMarginBottom(String marginBottom) {
 		this.marginBottom = marginBottom;
 	}
-	
-	
-	
+
 }

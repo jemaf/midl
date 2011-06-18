@@ -20,7 +20,7 @@ public class RadioButtonList extends Component {
 	}
 
 	@Override
-	public Component getSubComponent(Component c) {
+	public Component getSubComponent(int pos) {
 		// TODO Auto-generated method stub
 		return null;
 	}
