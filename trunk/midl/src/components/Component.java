@@ -35,6 +35,10 @@ public abstract class Component {
 	
 	public abstract void setSubComponent(Component c);
 	public abstract Component getSubComponent(int pos);
+	public abstract String parse2Android();
+	public abstract String parse2iOS();
+	public abstract String parse2WindowsPhone();
+	public abstract String parse2BlackBerry();
 
 	/**
 	 * @return the id

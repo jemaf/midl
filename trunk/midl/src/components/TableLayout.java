@@ -24,6 +24,30 @@ public class TableLayout extends Component {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public String parse2Android() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String parse2iOS() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String parse2WindowsPhone() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String parse2BlackBerry() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 }
