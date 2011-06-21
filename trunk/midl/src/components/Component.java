@@ -59,7 +59,32 @@ public abstract class Component {
 	
 	public abstract void addSubComponent(Component c);
 	public abstract Component getSubComponent(int pos);
-	public abstract Element parse2Android();	
+	
+	public Element parse2Android() {
+		
+		element = document.createElement(
+				COMPONENT_TYPE.getAndroidCorrespondence(this.componentType));
+		element.setAttribute("android:id", "@+id/" + this.id);
+		
+		element.setAttribute("android:layout_width", 
+				DIMENSION_TYPE.getAndroidCorrespondence(layoutWidth));
+		element.setAttribute("android:layout_height", 
+				DIMENSION_TYPE.getAndroidCorrespondence(layoutHeight));
+		element.setAttribute("android:layout_gravity", 
+				GRAVITY_TYPE.getAndroidCorrespondence(layoutGravity));
+		
+		element.setAttribute("android:layout_marginTop", this.marginTop);
+		element.setAttribute("android:layout_marginLeft", this.marginLeft);
+		element.setAttribute("android:layout_marginRight", this.marginRight);
+		element.setAttribute("android:layout_marginBottom", this.marginBottom);
+		
+		
+		for (Component component : this.subComponents)
+			element.appendChild(component.parse2Android());
+	
+		return element;
+	}
+	
 	public abstract String parse2iOS();
 	public abstract String parse2WindowsPhone();
 	public abstract String parse2BlackBerry();

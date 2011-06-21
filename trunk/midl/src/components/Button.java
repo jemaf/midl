@@ -6,19 +6,22 @@ import types.COMPONENT_TYPE;
 
 public class Button extends Component {
 
+	private String text;
+	
 	public Button() {
 		this.componentType = COMPONENT_TYPE.BUTTON;
+		this.text = "";
 	}
 	
 	public Button(String id) {
 		this.componentType = COMPONENT_TYPE.BUTTON;
 		this.id = id;
+		this.text = "";
 	}
 
 	@Override
 	public void addSubComponent(Component c) {
-		// TODO Auto-generated method stub
-		
+		this.subComponents.add(c);
 	}
 
 	@Override
@@ -29,8 +32,11 @@ public class Button extends Component {
 
 	@Override
 	public Element parse2Android() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		element = super.parse2Android();	
+		element.setAttribute("android:text", this.text);
+		
+		return element;
 	}
 
 	@Override
