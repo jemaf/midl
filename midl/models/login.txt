@@ -1,0 +1,20 @@
+LinearLayout tela;
+TextBox login;
+TextBox senha;
+Button ok;
+Label username;
+Label password;
+
+username.text = "Usuario: ";
+password.text = "Senha: ";
+ok.text = "Log in";
+
+
+{
+tela;
+	username;
+	login;
+	password;
+	senha;
+	ok;
+}
