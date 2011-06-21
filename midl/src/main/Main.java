@@ -29,7 +29,7 @@ public class Main {
 	public static void testComponents() throws Exception {
 		
 		
-		TextBox tx = new TextBox("txtTeste");
+		Component tx = new TextBox("txtTeste");
 		LinearLayout ll = new LinearLayout();
 		
 		ll.addSubComponent(tx);

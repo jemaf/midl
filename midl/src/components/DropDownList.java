@@ -1,24 +1,31 @@
 package components;
 
+import java.util.ArrayList;
+
 import org.w3c.dom.Element;
 
 import types.COMPONENT_TYPE;
 
 public class DropDownList extends Component {
 
+	private ArrayList<String> items;
+	
+	
 	public DropDownList() {
 		this.componentType = COMPONENT_TYPE.DROPDOWNLIST;
+		this.items = new ArrayList<String>();
 	}
 	
 	public DropDownList(String id) {
 		this.componentType = COMPONENT_TYPE.DROPDOWNLIST;
 		this.id = id;
+		this.items = new ArrayList<String>();
 	}
 
 	@Override
 	public void addSubComponent(Component c) {
-		// TODO Auto-generated method stub
 		
+		this.subComponents.add(c);
 	}
 
 	@Override
@@ -29,8 +36,10 @@ public class DropDownList extends Component {
 
 	@Override
 	public Element parse2Android() {
-		// TODO Auto-generated method stub
-		return null;
+
+		element = super.parse2Android();
+		
+		return element;
 	}
 
 	@Override
@@ -49,6 +58,20 @@ public class DropDownList extends Component {
 	public String parse2BlackBerry() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	/**
+	 * @return the items
+	 */
+	public ArrayList<String> getItems() {
+		return items;
+	}
+
+	/**
+	 * @param items the items to set
+	 */
+	public void setItems(ArrayList<String> items) {
+		this.items = items;
 	}
 	
 }

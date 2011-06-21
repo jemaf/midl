@@ -71,30 +71,12 @@ public class TextBox extends Component {
 	@Override
 	public Element parse2Android() {
 		
-		element = document.createElement(
-				COMPONENT_TYPE.getAndroidCorrespondence(this.componentType));
-		
-		element.setAttribute("android:id", "@+id/" + this.id);
+		element = super.parse2Android();
+	
 		element.setAttribute("android:text", this.text);
 		element.setAttribute("android:inputType", 
 				INPUT_TYPE.getAndroidCorrespondence(this.inputType));
-		
-		element.setAttribute("android:layout_width", 
-				DIMENSION_TYPE.getAndroidCorrespondence(layoutWidth));
-		element.setAttribute("android:layout_height", 
-				DIMENSION_TYPE.getAndroidCorrespondence(layoutHeight));
-		element.setAttribute("android:layout_gravity", 
-				GRAVITY_TYPE.getAndroidCorrespondence(layoutGravity));
-		
-		element.setAttribute("android:layout_marginTop", this.marginTop);
-		element.setAttribute("android:layout_marginLeft", this.marginLeft);
-		element.setAttribute("android:layout_marginRight", this.marginRight);
-		element.setAttribute("android:layout_marginBottom", this.marginBottom);
-		
-		
-		for (Component component : this.subComponents)
-			element.appendChild(component.parse2Android());
-		
+			
 		return element;
 	}
 

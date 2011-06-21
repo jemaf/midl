@@ -6,19 +6,23 @@ import types.COMPONENT_TYPE;
 
 public class RadioButton extends Component {
 
+	private String isChecked;
+	
 	public RadioButton() {
 		this.componentType = COMPONENT_TYPE.RADIOBUTTON;
+		this.isChecked = "false";
 	}
 
 	public RadioButton(String id) {
 		this.componentType = COMPONENT_TYPE.RADIOBUTTON;
 		this.id = id;
+		this.isChecked = "false";
 	}
 
 	@Override
 	public void addSubComponent(Component c) {
-		// TODO Auto-generated method stub
 		
+		this.subComponents.add(c);
 	}
 
 	@Override
@@ -29,8 +33,11 @@ public class RadioButton extends Component {
 
 	@Override
 	public Element parse2Android() {
-		// TODO Auto-generated method stub
-		return null;
+	
+		element = super.parse2Android();
+		element.setAttribute("android:ischecked", this.isChecked);
+		
+		return element;
 	}
 
 	@Override

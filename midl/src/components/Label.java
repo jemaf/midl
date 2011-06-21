@@ -3,22 +3,28 @@ package components;
 import org.w3c.dom.Element;
 
 import types.COMPONENT_TYPE;
+import types.DIMENSION_TYPE;
+import types.GRAVITY_TYPE;
+import types.INPUT_TYPE;
 
 public class Label extends Component {
 
+	private String text;
+	
 	public Label() {
 		this.componentType = COMPONENT_TYPE.LABEL;
+		this.text = "";
 	}
 	
 	public Label(String id) {
 		this.componentType = COMPONENT_TYPE.LABEL;
 		this.id = id;
+		this.text = "";
 	}
 
 	@Override
 	public void addSubComponent(Component c) {
-		// TODO Auto-generated method stub
-		
+		this.subComponents.add(c);
 	}
 
 	@Override
@@ -29,8 +35,11 @@ public class Label extends Component {
 
 	@Override
 	public Element parse2Android() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		element = super.parse2Android();
+		element.setAttribute("android:text", this.text);
+		
+		return element;
 	}
 
 	@Override
