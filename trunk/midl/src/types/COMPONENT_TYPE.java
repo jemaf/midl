@@ -20,5 +20,38 @@ public enum COMPONENT_TYPE {
 	LINEARLAYOUT,
 	ABSOLUTLAYOUT,
 	TABLELAYOUT,
-	RELATIVELAYOUT,	
+	RELATIVELAYOUT;
+	
+	public static String getAndroidCorrespondence(COMPONENT_TYPE type) {
+		
+		switch(type) {
+		
+		case TEXTBOX:
+			return "EditText";
+		case BUTTON:
+		case LABEL:
+		case DROPDOWNLIST:
+		case RADIOBUTTON:
+		case RADIOBUTTONLIST:
+		case SLIDER:
+		case PROGRESSBAR:
+		case CHECKBOX:
+		case TOGGLE:
+		
+		//layouts
+		case LINEARLAYOUT:
+			return "LinearLayout";
+		case ABSOLUTLAYOUT:
+		case TABLELAYOUT:
+		case RELATIVELAYOUT:
+		
+		
+		
+		case UNKNOWN:
+		default:
+			return null;
+		}
+		
+	}
+	
 }

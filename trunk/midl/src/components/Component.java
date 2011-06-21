@@ -1,13 +1,20 @@
 package components;
+
 import java.util.ArrayList;
 
-import types.DIMENSION_TYPE;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import types.COMPONENT_TYPE;
+import types.DIMENSION_TYPE;
 import types.GRAVITY_TYPE;
 
 
 public abstract class Component {
-
+	
 	//atributos basicos do componente (id e subcomponentes)
 	protected String id;
 	protected ArrayList<Component> subComponents;
@@ -25,17 +32,34 @@ public abstract class Component {
 	protected String marginTop;
 	protected String marginBottom;
 	
+	public static Document document = null;
+	protected Element element;
 	
 	public Component() {
 		
 		this.componentType = COMPONENT_TYPE.UNKNOWN;
 		this.subComponents = new ArrayList<Component>();
 		this.id = null;
+		
+		this.marginBottom = "0dip";
+		this.marginRight = "0dip";
+		this.marginLeft = "0dip";
+		this.marginTop =  "0dip";
+		
+		try {
+			if (document == null) {
+			document = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
+			}
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 	
-	public abstract void setSubComponent(Component c);
+	public abstract void addSubComponent(Component c);
 	public abstract Component getSubComponent(int pos);
-	public abstract String parse2Android();
+	public abstract Element parse2Android();	
 	public abstract String parse2iOS();
 	public abstract String parse2WindowsPhone();
 	public abstract String parse2BlackBerry();

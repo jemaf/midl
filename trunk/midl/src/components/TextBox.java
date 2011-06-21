@@ -1,6 +1,10 @@
 package components;
 
+import org.w3c.dom.Element;
+
 import types.COMPONENT_TYPE;
+import types.DIMENSION_TYPE;
+import types.GRAVITY_TYPE;
 import types.INPUT_TYPE;
 
 public class TextBox extends Component {
@@ -12,16 +16,21 @@ public class TextBox extends Component {
 	public TextBox() {
 		this.componentType = COMPONENT_TYPE.TEXTBOX;
 		this.inputType = INPUT_TYPE.TEXTPERSONNAME;
+		
 	}
 	
 	public TextBox(String id) {
-		this.componentType = COMPONENT_TYPE.TEXTBOX;
 		this.id = id;
+		this.componentType = COMPONENT_TYPE.TEXTBOX;
 		this.inputType = INPUT_TYPE.TEXTPERSONNAME;
+		this.layoutGravity = GRAVITY_TYPE.LEFT;
+		this.layoutHeight = DIMENSION_TYPE.WRAP_CONTENT;
+		this.layoutWidth = DIMENSION_TYPE.WRAP_CONTENT;
+		this.layoutWeight = "0";
 	}
 
 	@Override
-	public void setSubComponent(Component c) {
+	public void addSubComponent(Component c) {
 		this.subComponents.add(c);
 		
 	}
@@ -60,9 +69,33 @@ public class TextBox extends Component {
 	}
 
 	@Override
-	public String parse2Android() {
-		// TODO Auto-generated method stub
-		return null;
+	public Element parse2Android() {
+		
+		element = document.createElement(
+				COMPONENT_TYPE.getAndroidCorrespondence(this.componentType));
+		
+		element.setAttribute("android:id", "@+id/" + this.id);
+		element.setAttribute("android:text", this.text);
+		element.setAttribute("android:inputType", 
+				INPUT_TYPE.getAndroidCorrespondence(this.inputType));
+		
+		element.setAttribute("android:layout_width", 
+				DIMENSION_TYPE.getAndroidCorrespondence(layoutWidth));
+		element.setAttribute("android:layout_height", 
+				DIMENSION_TYPE.getAndroidCorrespondence(layoutHeight));
+		element.setAttribute("android:layout_gravity", 
+				GRAVITY_TYPE.getAndroidCorrespondence(layoutGravity));
+		
+		element.setAttribute("android:layout_marginTop", this.marginTop);
+		element.setAttribute("android:layout_marginLeft", this.marginLeft);
+		element.setAttribute("android:layout_marginRight", this.marginRight);
+		element.setAttribute("android:layout_marginBottom", this.marginBottom);
+		
+		
+		for (Component component : this.subComponents)
+			element.appendChild(component.parse2Android());
+		
+		return element;
 	}
 
 	@Override

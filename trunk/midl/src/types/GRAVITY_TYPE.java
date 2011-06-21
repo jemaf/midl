@@ -11,6 +11,40 @@ public enum GRAVITY_TYPE {
 	FILL_VERTICAL,
 	LEFT,
 	RIGHT,
-	TOP
+	TOP;
+	
+	
+	public static String getAndroidCorrespondence(GRAVITY_TYPE type) {
+		
+		switch (type) {
+		
+		case BOTTOM:
+			return "bottom";
+		case CENTER:
+			return "center";
+		case CENTER_HORIZONTAL:
+			return "center_horizontal";
+		case CENTER_VERTICAL:
+			return "center_vertical";
+		case FILL:
+			return "fill";
+		case FILL_HORIZONTAL:
+			return "fill_horizontal";
+		case FILL_VERTICAL:
+			return "fill_vertical";
+		case LEFT:
+			return "left";
+		case RIGHT:
+			return "right";
+		case TOP:
+			return "top";
+			default:
+				return null;
+		}
+		
+	}
 
+	
+	
+	
 }

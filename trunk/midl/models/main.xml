@@ -6,7 +6,10 @@
 		android:text="Username" android:layout_height="wrap_content"
 		android:id="@+id/textView1" android:layout_width="wrap_content"
 		android:layout_gravity="center"></TextView>
-	<EditText android:layout_height="wrap_content" android:id="@+id/editText1" android:layout_gravity="center" android:layout_weight="1" android:layout_width="match_parent" android:layout_margin="15dip" android:inputType="textPassword"></EditText>
+	<EditText android:layout_height="wrap_content" android:id="@+id/editText1"
+		android:layout_gravity="center" android:layout_weight="1"
+		android:layout_width="match_parent" android:layout_margin="15dip"
+		android:inputType="textPassword"></EditText>
 	<TextView android:textAppearance="?android:attr/textAppearanceMedium"
 		android:text="Password" android:layout_height="wrap_content"
 		android:id="@+id/textView2" android:layout_width="wrap_content"

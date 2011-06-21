@@ -1,5 +1,7 @@
 package components;
 
+import org.w3c.dom.Element;
+
 import types.COMPONENT_TYPE;
 
 public class Label extends Component {
@@ -14,7 +16,7 @@ public class Label extends Component {
 	}
 
 	@Override
-	public void setSubComponent(Component c) {
+	public void addSubComponent(Component c) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -26,7 +28,7 @@ public class Label extends Component {
 	}
 
 	@Override
-	public String parse2Android() {
+	public Element parse2Android() {
 		// TODO Auto-generated method stub
 		return null;
 	}
