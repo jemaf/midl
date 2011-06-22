@@ -23,10 +23,6 @@ public class TextBox extends Component {
 		this.id = id;
 		this.componentType = COMPONENT_TYPE.TEXTBOX;
 		this.inputType = INPUT_TYPE.TEXTPERSONNAME;
-		this.layoutGravity = GRAVITY_TYPE.LEFT;
-		this.layoutHeight = DIMENSION_TYPE.WRAP_CONTENT;
-		this.layoutWidth = DIMENSION_TYPE.WRAP_CONTENT;
-		this.layoutWeight = "0";
 	}
 
 	@Override
@@ -38,34 +34,6 @@ public class TextBox extends Component {
 	@Override
 	public Component getSubComponent(int pos) {
 		return this.subComponents.get(pos);
-	}
-
-	/**
-	 * @return the text
-	 */
-	public String getText() {
-		return text;
-	}
-
-	/**
-	 * @param text the text to set
-	 */
-	public void setText(String text) {
-		this.text = text;
-	}
-
-	/**
-	 * @return the inputType
-	 */
-	public INPUT_TYPE getInputType() {
-		return inputType;
-	}
-
-	/**
-	 * @param inputType the inputType to set
-	 */
-	public void setInputType(INPUT_TYPE inputType) {
-		this.inputType = inputType;
 	}
 
 	@Override
@@ -98,5 +66,31 @@ public class TextBox extends Component {
 		return null;
 	}
 	
-	
+	/**
+	 * @return the text
+	 */
+	public String getText() {
+		return text;
+	}
+
+	/**
+	 * @param text the text to set
+	 */
+	public void setText(String text) {
+		this.text = text;
+	}
+
+	/**
+	 * @return the inputType
+	 */
+	public INPUT_TYPE getInputType() {
+		return inputType;
+	}
+
+	/**
+	 * @param inputType the inputType to set
+	 */
+	public void setInputType(INPUT_TYPE inputType) {
+		this.inputType = inputType;
+	}
 }
