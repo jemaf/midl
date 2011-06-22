@@ -17,8 +17,8 @@ public class TableLayout extends Component {
 
 	@Override
 	public void addSubComponent(Component c) {
-		// TODO Auto-generated method stub
 		
+		this.subComponents.add(c);
 	}
 
 	@Override
@@ -29,8 +29,13 @@ public class TableLayout extends Component {
 
 	@Override
 	public Element parse2Android() {
-		// TODO Auto-generated method stub
-		return null;
+	
+		element = super.parse2Android();
+		element.setAttribute(
+			    "xmlns:android",
+			    "http://schemas.android.com/apk/res/android");
+		
+		return element;
 	}
 
 	@Override

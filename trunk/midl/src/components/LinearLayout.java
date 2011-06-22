@@ -45,6 +45,8 @@ public class LinearLayout extends Component {
 		element.setAttribute(
 			    "xmlns:android",
 			    "http://schemas.android.com/apk/res/android");
+		element.setAttribute("android:orientation", 
+				ORIENTATION.getAndroidCorrespondence(this.orientation));
 		
 		return element;
 	}
