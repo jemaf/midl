@@ -32,7 +32,7 @@ public class CheckBox extends Component{
 	}
 
 	@Override
-	public Component getSubComponent(int pos) {
+	public Component getSubComponent(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -101,6 +101,14 @@ public class CheckBox extends Component{
 		this.checked = checked;
 	}
 
+
+	public void setCheckBoxComponent(String prop, String value) {
+	
+		if(prop.equalsIgnoreCase("text")) this.text = value;
+		else if (prop.equalsIgnoreCase("checked")) this.checked = value;
+		else super.setComponentAttribute(prop, value);
+		
+	}
 	
 	
 	

@@ -31,7 +31,7 @@ public class ProgressBar extends Component {
 	}
 
 	@Override
-	public Component getSubComponent(int pos) {
+	public Component getSubComponent(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -77,6 +77,14 @@ public class ProgressBar extends Component {
 	 */
 	public void setMax(int max) {
 		this.max = max;
+	}
+
+	public void setProgressBarComponent(String prop, String value) {
+		
+		if(prop.equalsIgnoreCase("max")) this.max = Integer.parseInt(value.trim());
+		else if (prop.equalsIgnoreCase("progress")) this.progress = Integer.parseInt(value.trim());
+		else super.setComponentAttribute(prop, value);
+		
 	}
 	
 

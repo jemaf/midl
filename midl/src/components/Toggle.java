@@ -35,7 +35,7 @@ public class Toggle  extends Component{
 	}
 
 	@Override
-	public Component getSubComponent(int pos) {
+	public Component getSubComponent(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -120,6 +120,16 @@ public class Toggle  extends Component{
 	 */
 	public void setChecked(String checked) {
 		this.checked = checked;
+	}
+
+
+	public void setToggleComponent(String prop, String value) {
+		
+		if(prop.equalsIgnoreCase("textOn")) this.textOn = value;
+		else if(prop.equalsIgnoreCase("textOff")) this.textOff = value;
+		else if(prop.equalsIgnoreCase("checked")) this.checked = value;
+		else super.setComponentAttribute(prop, value);
+		
 	}
 
 }

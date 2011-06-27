@@ -1,0 +1,53 @@
+DECLARE:
+LinearLayout formulario
+
+Label lblNome
+Label lblEndereco
+Label lblTelefone
+
+TextBox txtNome
+TextBox txtEndereco
+TextBox txtTelefone
+
+RadioButton masc
+RadioButton fem
+
+RadioButtonList sexo
+
+Button ok
+
+DEFINE:
+
+lblNome.text = Nome
+
+lblEndereco.text = Endereco
+txtEndereco.inputType = postalAddress
+
+lblTelefone.text = Telefone
+txtTelefone.inputType = phone
+
+masc.text = Masculino
+masc.width = wrapContent
+
+fem.text = Feminino
+fem.width = wrapContent
+
+sexo.orientation = horizontal
+
+ok.text = Cadastrar
+ok.width = wrapContent
+ok.gravity = center
+
+DISPOSE:
+
+formulario
+	lblNome
+	txtNome
+	lblEndereco
+	txtEndereco
+	lblTelefone
+	txtTelefone
+	sexo
+		masc
+		fem
+	ok

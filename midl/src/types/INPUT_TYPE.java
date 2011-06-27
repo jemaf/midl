@@ -20,14 +20,26 @@ public enum INPUT_TYPE {
 		case NUMBERPASSWORD:
 			return "numberPassword";
 		case TEXTEMAILADDRESS:
-			return "textEmailAddres";
+			return "textEmailAddress";
 		case PHONE:
 			return "phone";
 		case POSTALADDRESS:
-			return "postalAddres";
+			return "textPostalAddress";
 			default:
 				return null;
 		
 		}
+	}
+
+	public static INPUT_TYPE getEnumCorrespondence(String value) {
+	
+		if(value.toLowerCase().equalsIgnoreCase("textpersonname")) return TEXTPERSONNAME;
+		else if(value.toLowerCase().equalsIgnoreCase("textpassword")) return TEXTPASSWORD;
+		else if(value.toLowerCase().equalsIgnoreCase("numberpassword")) return NUMBERPASSWORD;
+		else if(value.toLowerCase().equalsIgnoreCase("textemailaddres")) return TEXTEMAILADDRESS;
+		else if(value.toLowerCase().equalsIgnoreCase("phone")) return PHONE;
+		else if(value.toLowerCase().equalsIgnoreCase("postaladdress")) return POSTALADDRESS;
+		else return null;
+		
 	}
 }

@@ -44,6 +44,21 @@ public enum GRAVITY_TYPE {
 		
 	}
 
+	public static GRAVITY_TYPE getEnumCorrespondence(String value) {
+		
+		if(value.equalsIgnoreCase("bottom")) return BOTTOM;
+		else if (value.equalsIgnoreCase("center")) return CENTER;
+		else if (value.equalsIgnoreCase("centerHorizontal")) return CENTER_HORIZONTAL;
+		else if (value.equalsIgnoreCase("centerVertical")) return CENTER_VERTICAL;
+		else if (value.equalsIgnoreCase("fill")) return FILL;
+		else if (value.equalsIgnoreCase("fillHorizontal")) return FILL_HORIZONTAL;
+		else if (value.equalsIgnoreCase("fillVertical")) return FILL_VERTICAL;
+		else if (value.equalsIgnoreCase("left")) return LEFT;
+		else if (value.equalsIgnoreCase("right")) return RIGHT;
+		else if (value.equalsIgnoreCase("top")) return TOP;
+		else return null;
+	}
+
 	
 	
 	

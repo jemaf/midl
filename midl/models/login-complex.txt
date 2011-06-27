@@ -1,0 +1,39 @@
+DECLARE:
+LinearLayout tela
+LinearLayout telaLogin
+LinearLayout telaSenha
+
+TextBox login
+TextBox senha
+Button ok
+Label username
+Label password
+
+DEFINE:
+username.text = Usuario:
+username.width = wrapContent
+username.height = fillParent
+
+password.text = Senha:
+password.width = wrapContent
+password.height = fillParent
+
+ok.text = Log in
+ok.width = wrapContent
+ok.gravity = center
+
+telaLogin.orientation = horizontal
+telaLogin.height = wrapContent
+
+telaSenha.orientation = horizontal
+telaSenha.height = wrapContent
+
+DISPOSE:
+tela
+	telaLogin
+		username
+		login
+	telaSenha
+		password
+		senha
+	ok

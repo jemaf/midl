@@ -20,12 +20,12 @@ public class Slider  extends Component{
 	
 	@Override
 	public void addSubComponent(Component c) {
-		// TODO Auto-generated method stub
 		
+		this.addSubComponent(c);
 	}
 
 	@Override
-	public Component getSubComponent(int pos) {
+	public Component getSubComponent(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -56,6 +56,13 @@ public class Slider  extends Component{
 	public String parse2BlackBerry() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+
+	public void setSliderComponent(String prop, String value) {
+		
+		super.setComponentAttribute(prop, value);
+		
 	}
 
 	

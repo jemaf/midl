@@ -22,7 +22,7 @@ public class TableLayout extends Component {
 	}
 
 	@Override
-	public Component getSubComponent(int pos) {
+	public Component getSubComponent(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -54,6 +54,11 @@ public class TableLayout extends Component {
 	public String parse2BlackBerry() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public void setTableLayoutComponent(String prop, String value) {
+		
+		super.setComponentAttribute(prop, value);
 	}
 	
 	

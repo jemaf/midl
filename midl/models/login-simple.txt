@@ -1,0 +1,20 @@
+DECLARE:
+LinearLayout tela
+TextBox login
+TextBox senha
+Button ok
+Label username
+Label password
+
+DEFINE:
+username.text = Usuario:
+password.text = Senha:
+ok.text = Log in
+
+DISPOSE:
+tela
+	username
+	login
+	password
+	senha
+	ok

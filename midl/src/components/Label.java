@@ -28,7 +28,7 @@ public class Label extends Component {
 	}
 
 	@Override
-	public Component getSubComponent(int pos) {
+	public Component getSubComponent(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -58,6 +58,12 @@ public class Label extends Component {
 	public String parse2BlackBerry() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public void setLabelComponent(String prop, String value) {
+		
+		if(prop.equalsIgnoreCase("text")) this.text = value;
+		else super.setComponentAttribute(prop, value);
 	}
 }
 

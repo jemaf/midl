@@ -17,5 +17,15 @@ public enum ORIENTATION {
 		}
 		
 	}
+
+	public static ORIENTATION getEnumCorrespondence(String value) {
+	
+		value = value.trim();
+		
+		if(value.equalsIgnoreCase("vertical")) return VERTICAL;
+		else if(value.equalsIgnoreCase("horizontal")) return HORIZONTAL;
+		else return null;
+		
+	}
 	
 }
