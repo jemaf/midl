@@ -31,10 +31,6 @@ public class TextBox extends Component {
 		
 	}
 
-	@Override
-	public Component getSubComponent(int pos) {
-		return this.subComponents.get(pos);
-	}
 
 	@Override
 	public Element parse2Android() {
@@ -92,5 +88,13 @@ public class TextBox extends Component {
 	 */
 	public void setInputType(INPUT_TYPE inputType) {
 		this.inputType = inputType;
+	}
+
+	public void setTextBoxComponent(String prop, String value) {
+		
+		if(prop.equals("text")) this.setText(value);
+		else if(prop.equals("inputType")) this.setInputType(INPUT_TYPE.getEnumCorrespondence(value));
+		else this.setComponentAttribute(prop, value);
+		
 	}
 }

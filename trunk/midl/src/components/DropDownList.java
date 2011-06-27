@@ -29,7 +29,7 @@ public class DropDownList extends Component {
 	}
 
 	@Override
-	public Component getSubComponent(int pos) {
+	public Component getSubComponent(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -72,6 +72,11 @@ public class DropDownList extends Component {
 	 */
 	public void setItems(ArrayList<String> items) {
 		this.items = items;
+	}
+
+	public void setDropDownListComponent(String prop, String value) {
+	
+		super.setComponentAttribute(prop, value);
 	}
 	
 }

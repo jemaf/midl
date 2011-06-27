@@ -7,14 +7,17 @@ import types.COMPONENT_TYPE;
 public class RadioButton extends Component {
 
 	private String isChecked;
+	private String text;
 	
 	public RadioButton() {
 		this.componentType = COMPONENT_TYPE.RADIOBUTTON;
+		this.text = "";
 		this.isChecked = "false";
 	}
 
 	public RadioButton(String id) {
 		this.componentType = COMPONENT_TYPE.RADIOBUTTON;
+		this.text = "";
 		this.id = id;
 		this.isChecked = "false";
 	}
@@ -26,7 +29,7 @@ public class RadioButton extends Component {
 	}
 
 	@Override
-	public Component getSubComponent(int pos) {
+	public Component getSubComponent(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -35,7 +38,8 @@ public class RadioButton extends Component {
 	public Element parse2Android() {
 	
 		element = super.parse2Android();
-		element.setAttribute("android:ischecked", this.isChecked);
+		element.setAttribute("android:checked", this.isChecked);
+		element.setAttribute("android:text", this.text);
 		
 		return element;
 	}
@@ -56,6 +60,14 @@ public class RadioButton extends Component {
 	public String parse2BlackBerry() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public void setRadioButtonComponent(String prop, String value) {
+		
+		if(prop.equalsIgnoreCase("checked")) this.isChecked = value;
+		else if(prop.equalsIgnoreCase("text")) this.text = value; 
+		else super.setComponentAttribute(prop, value);
+		
 	}
 	
 }

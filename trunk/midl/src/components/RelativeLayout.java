@@ -22,7 +22,7 @@ public class RelativeLayout extends Component {
 	}
 
 	@Override
-	public Component getSubComponent(int pos) {
+	public Component getSubComponent(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -54,6 +54,11 @@ public class RelativeLayout extends Component {
 	public String parse2BlackBerry() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public void setRelativeLayoutComponent(String prop, String value) {
+		
+		super.setComponentAttribute(prop, value);
 	}
 	
 	

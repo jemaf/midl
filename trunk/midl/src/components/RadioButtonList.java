@@ -8,9 +8,9 @@ import types.COMPONENT_TYPE;
 import types.ORIENTATION;
 
 public class RadioButtonList extends Component {
-	
+
 	private ORIENTATION orientation;
-	
+
 	public RadioButtonList() {
 		this.componentType = COMPONENT_TYPE.RADIOBUTTONLIST;
 		this.subComponents = new ArrayList<Component>();
@@ -31,7 +31,7 @@ public class RadioButtonList extends Component {
 	}
 
 	@Override
-	public Component getSubComponent(int pos) {
+	public Component getSubComponent(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -40,10 +40,10 @@ public class RadioButtonList extends Component {
 	public Element parse2Android() {
 
 		element = super.parse2Android();
-		
-		element.setAttribute("android:orientation", 
+
+		element.setAttribute("android:orientation",
 				ORIENTATION.getAndroidCorrespondence(this.orientation));
-			
+
 		return element;
 	}
 
@@ -73,11 +73,19 @@ public class RadioButtonList extends Component {
 	}
 
 	/**
-	 * @param orientation the orientation to set
+	 * @param orientation
+	 *            the orientation to set
 	 */
 	public void setOrientation(ORIENTATION orientation) {
 		this.orientation = orientation;
 	}
-	
-	
+
+	public void setRadioButtonListComponent(String prop, String value) {
+
+		if (prop.equalsIgnoreCase("orientation"))
+			this.orientation = ORIENTATION.getEnumCorrespondence(value);
+		else super.setComponentAttribute(prop, value);
+
+	}
+
 }

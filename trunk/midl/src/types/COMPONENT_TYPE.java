@@ -62,7 +62,5 @@ public enum COMPONENT_TYPE {
 		default:
 			return null;
 		}
-		
 	}
-	
 }

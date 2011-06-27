@@ -18,4 +18,11 @@ public enum DIMENSION_TYPE {
 		}
 
 	}
+
+	public static DIMENSION_TYPE getEnumCorrespondence(String value) {
+		
+		if(value.equalsIgnoreCase("wrapContent")) return WRAP_CONTENT;
+		else if(value.equalsIgnoreCase("fillParent")) return FILL_PARENT;
+		else return null;
+	}
 }

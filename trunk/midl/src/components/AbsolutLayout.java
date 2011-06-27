@@ -22,7 +22,7 @@ public class AbsolutLayout extends Component {
 	}
 
 	@Override
-	public Component getSubComponent(int pos) {
+	public Component getSubComponent(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
